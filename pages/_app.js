@@ -16,12 +16,13 @@ export default function App({ Component, pageProps }) {
         },
       }}
     >
-      <Layout>
-        <GlobalStyle />
-        <SessionProvider session={pageProps.session}>
+      <SessionProvider session={pageProps.session}>
+        <Layout>
+          <GlobalStyle />
+
           <Component {...pageProps} />
-        </SessionProvider>
-      </Layout>
+        </Layout>{" "}
+      </SessionProvider>
     </SWRConfig>
   );
 }
