@@ -1,6 +1,7 @@
 import GlobalStyle from "../styles.js";
 import { SWRConfig } from "swr";
 import Layout from "../components/Layout.js";
+import { SessionProvider } from "next-auth/react";
 
 export default function App({ Component, pageProps }) {
   return (
@@ -17,7 +18,9 @@ export default function App({ Component, pageProps }) {
     >
       <Layout>
         <GlobalStyle />
-        <Component {...pageProps} />
+        <SessionProvider session={pageProps.session}>
+          <Component {...pageProps} />
+        </SessionProvider>
       </Layout>
     </SWRConfig>
   );
