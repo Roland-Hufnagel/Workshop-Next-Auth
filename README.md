@@ -68,9 +68,9 @@ GITHUB_SECRET=
 NEXTAUTH_URL=
 NEXTAUTH_SECRET=
 ```
-GITHUB_ID und GITHUB_SECRET habt ihr beim Registrieren der O-Auth App auf github bekommen
-NEXTAUTH_URL ist die URL der Anwendung z.B. http://localhost:3000 oder das Vercel Deployment
-NEXTAUTH_SECRET müsst ihr selbst erzeugen. Z.B. mit dem Befehl ``openssl rand -base64 32``im Terminal
+- GITHUB_ID und GITHUB_SECRET habt ihr beim Registrieren der O-Auth App auf github bekommen
+- NEXTAUTH_URL ist die URL der Anwendung z.B. http://localhost:3000 oder das Vercel Deployment
+- NEXTAUTH_SECRET müsst ihr selbst erzeugen. Z.B. mit dem Befehl ``openssl rand -base64 32``im Terminal
 
 ### Chapter 3: Login bauen und useSession hook verwenden
 
@@ -90,7 +90,7 @@ const { data: session } = useSession();
 (siehe docs `Getting Started`)
 
 
-Für das BAckend stellt next-auth eigene Methoden zur Verfügung:
+Für das Backend stellt next-auth eigene Methoden zur Verfügung:
 
 in `pages/api/place/index.js`:
 
