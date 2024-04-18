@@ -61,6 +61,17 @@ import { sessionProvider } from "next-auth/react";
 
 (Auf diese Weise muss die session nicht erst aus den pageProps destructured werden, wie es in den docs (Zeile 5) gezeigt wird)
 
+- die Umgebungsvariablen festlegen:
+```js
+GITHUB_ID=
+GITHUB_SECRET=
+NEXTAUTH_URL=
+NEXTAUTH_SECRET=
+```
+GITHUB_ID und GITHUB_SECRET habt ihr beim Registrieren der O-Auth App auf github bekommen
+NEXTAUTH_URL ist die URL der Anwendung z.B. http://localhost:3000 oder das Vercel Deployment
+NEXTAUTH_SECRET müsst ihr selbst erzeugen. Z.B. mit dem Befehl ``openssl rand -base64 32``im Terminal
+
 ### Chapter 3: Login bauen und useSession hook verwenden
 
 (siehe docs `Getting Started`)
@@ -76,15 +87,10 @@ const { data: session } = useSession();
 
 ### Chapter 4: Backend sichern
 
-(siehe docs `Configuration -> Options`)
+(siehe docs `Getting Started`)
 
-1. Damit Backend und Frontend die Sessiondaten sicher austauschen können, brauchen sie eine NEXTAUTH_URL und ein NEXTAUTH_SECRET. Diese müssen in der `.env.local` hinterlegt sein:
 
-NEXTAUTH_URL: Die URL deiner Seite, z.B. http://localhost:3000
-
-Das secret kannst du selbst festlegen. Am sichersten erzeugst du dir eins im Terminal mit folgendem Befehl: `openssl rand -base64 32`. Den erzeugten String kopierst du dir und speicherst ihn im projekt unter dem Namen NEXTAUTH_SECRET
-
-2. Für das BAckend stellt next-auth eigene Methoden zur Verfügung:
+Für das BAckend stellt next-auth eigene Methoden zur Verfügung:
 
 in `pages/api/place/index.js`:
 
