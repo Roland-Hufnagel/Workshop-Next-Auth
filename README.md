@@ -145,18 +145,9 @@ if (session){
     const places = await Place.find();
     return response.status(200).json(places);
 }
-
-
-### Scripts
-
-You can use the following commands:
-
-- `npm run dev` to start a development server
-- `npm run build` to build the project
-- `npm run start` to start a production server
-- `npm run test` to run the tests
-- `npm run lint` to run the linter
 ```
+
+### Problem mit Pull Request Workflow:
 
 Achtung:
 Die OAuth App ist immer nur für EINE URL eingetragen, d.h. ihr müsst eine OAuth App für eure Testumgebung
