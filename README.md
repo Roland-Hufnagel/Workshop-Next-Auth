@@ -29,16 +29,6 @@ auf github-profil: settings -> Developer Settings -> OAuth-Apps -> new OAuth App
 - Generate new CLient secret
 - CLIENT secret kopieren und ins Projekt als GITHUB_SECRET einfügen
 
-Achtung:
-Die OAuth App ist immer nur für EINE URL eingetragen, d.h. ihr müsst eine OAuth App für eure Testumgebung
-(localhost) erstellen und eine weitere für euer Vercel-Deployment.
-Genau genommen müsst ihr sogar für jeden PR eine OAuth App eintragen, denn Vercel erzeugt für jeden PR
-eine neue URL. Um dieses Problem zu umgehen, könnt ihr in der Config ([...nextauth].js) neben dem github provider
-auch einen CredentialsProvider (Anmeldung per username und password) einrichten:
-
-![Bild](./public/credential.png)
-
-Dann kann jeder zum reviewen und testen diesen user und passwort verwenden.
 
 ### Chapter 2: Basic Setup
 
@@ -146,3 +136,14 @@ You can use the following commands:
 - `npm run test` to run the tests
 - `npm run lint` to run the linter
 ```
+
+Achtung:
+Die OAuth App ist immer nur für EINE URL eingetragen, d.h. ihr müsst eine OAuth App für eure Testumgebung
+(localhost) erstellen und eine weitere für euer Vercel-Deployment.
+Genau genommen müsst ihr sogar für jeden PR eine OAuth App eintragen, denn Vercel erzeugt für jeden PR
+eine neue URL. Um dieses Problem zu umgehen, könnt ihr in der Config ([...nextauth].js) neben dem github provider
+auch einen CredentialsProvider (Anmeldung per username und password) einrichten:
+
+![Bild](./public/credential.png)
+
+Dann kann jeder zum reviewen und testen diesen user und passwort verwenden.
