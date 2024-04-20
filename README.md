@@ -42,7 +42,7 @@ auf github-profil: settings -> Developer Settings -> OAuth-Apps -> new OAuth App
   - in pages/\_app.js:
 
 ```js
-import { sessionProvider } from "next-auth/react";
+import { SessionProvider } from "next-auth/react";
 // und um die ganze app legen:
 <SessionProvider session={pageProps.session}>
   <Component {...pageProps} />
