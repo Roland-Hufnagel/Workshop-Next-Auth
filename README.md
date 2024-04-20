@@ -84,7 +84,7 @@ export default function Component() {
       <button onClick={() => signIn()}>Sign in</button>
     </>
   )
-
+}
 ```
 
 ```js
